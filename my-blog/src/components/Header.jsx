@@ -44,24 +44,27 @@ const Header = () => {
         <div className="lg:hidden z-50">
           {navIsVisible ? (
             <AiOutlineClose
-              className="w-6 h-6"
+              className="w-10 h-10 rounded-md bg-blue-500"
               onClick={navVisibilityHandler}
             />
           ) : (
-            <AiOutlineMenu className="w-6 h-6" onClick={navVisibilityHandler} />
+            <AiOutlineMenu
+              className="w-10 h-10 rounded-md bg-blue-500"
+              onClick={navVisibilityHandler}
+            />
           )}
         </div>
         <div
           className={`${
             navIsVisible ? "right-0" : "-right-full"
-          } transition-all duration-300 mt-[56px] lg:mt-0 bg-dark-hard lg:bg-transparent z-[49] flex flex-col w-full lg:w-auto justify-center lg:justify-end lg:flex-row fixed top-8 bottom-0 lg:static gap-x-9 items-center`}
+          } transition-all duration-300 mt-[56px] lg:mt-0 bg-gray-800 lg:bg-transparent z-[49] flex flex-col w-full lg:w-auto justify-center lg:justify-end lg:flex-row fixed top-8 bottom-0 lg:static gap-x-9 items-center`}
         >
           <ul className="text-white items-center gap-y-5 lg:text-dark-sort flex flex-col lg:flex-row gap-x-2 font-semibold">
             {navItemsInfor.map((item) => (
               <NavItems key={item.name} item={item} />
             ))}
           </ul>
-          <button className="mt-5 lg:mt-0 border-2 border-blue-500 px- py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300">
+          <button className="mt-5 lg:mt-0 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300">
             Sign In
           </button>
         </div>
